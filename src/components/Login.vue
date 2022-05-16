@@ -1,7 +1,7 @@
 <template>
     <div class="login__box">
         <div class="login__title">
-            <h4>Ваши данные</h4>
+            <h4>Получатель</h4>
             <button>Войти</button>
         </div>
         <div class="message mt-4">

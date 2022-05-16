@@ -1,18 +1,23 @@
 <template>
     <div class="basket__item">
+        <div class="far fa-trash-alt korzina-trash"></div>
         <div class="basket__left">
             <input id="check__input" type="checkbox" />
             <div class="basket__image">
                 <img src="../assets/image/outdoors-3176153_1920 1 (1).png" alt="">
             </div>
             <div class="basket__box">
-                <h4 class="mb-4">POLO  рубашка</h4>
-                <h5 class="mb-4">Цвет: <span class="basket__gray">Белый</span></h5>
-                <h5 class="mb-4">Размер: <span class="basket__gray">XXL - 44</span></h5>
-                <div class="flex">
+                <div class="grid-item">
+                    <h4 class="mb-4">POLO  рубашка</h4>
+                    <h5 class="mb-4"><span>Белый, XXL - 44</span></h5>
                     <div class="basket__price">
                         <h3>500 ₽</h3>
                     </div>
+                </div>
+                <div class="grid-item">
+                    <div class="bank">В Узбекистан через EMU</div>
+                </div>
+                <div class="grid-item self-end">
                     <div class="basket__count">
                         <Counter />
                         <h5>Осталось 2 шт</h5>
@@ -25,17 +30,27 @@
 
 <script>
 import Counter from '../components/Counter.vue'
+
 export default {
   components: {
-    Counter
-  }
+    Counter,
+  },
 }
 </script>
 
 <style scoped>
+    .korzina-trash{
+        font-size: 24px;
+        color: #EE4927;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
     .basket__left {
         display: flex;
         flex-direction: row;
+        width: 100%;
     }
     .basket__image {
         min-width: 150px;
@@ -83,8 +98,10 @@ export default {
         position: relative;
     }
     .basket__box {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+        width: 100%;
     }
     .basket__box h4 {
         font-size: 18px;
@@ -98,6 +115,9 @@ export default {
         font-size: 16px;
         line-height: 1;
         color: #023047;
+    }
+    .basket__box h5 span{
+        line-height: 1;
     }
     .basket__gray {
         font-weight: normal;
@@ -134,23 +154,14 @@ export default {
         line-height: 17px;
         color: #898989;
     }
-
-    @media (min-width: 1000px){
-        .basket__price{
-            width: 270px;
-        }
+    .bank{
+        background: #f6f6f6;
+        text-align: center;
+        padding: 3px;
+        line-height: 1;
     }
 
     @media (max-width: 1000px){
-        .basket__left{
-            width: 100%;
-        }
-        .basket__box{
-            width: 100%;
-        }
-        .basket__box .flex{
-            justify-content: space-between;
-        }
         .basket__price{
             align-items: unset;
         }
@@ -159,6 +170,10 @@ export default {
         }
         .basket__count h5{
             margin-top: 6px;
+        }
+        .bank{
+            padding: 2px;
+            font-size: 14px;
         }
     }
 
@@ -177,6 +192,11 @@ export default {
     }
 
    @media (min-width: 415px) and (max-width: 600px){
+       .korzina-trash{
+           top: 15px;
+           right: 15px;
+           font-size: 22px;
+       }
        .basket__price{
            align-items: unset;
        }
@@ -205,9 +225,30 @@ export default {
        .basket__count h5{
            margin-top: 5px;
        }
+        .basket__box{
+            grid-template-columns: 1fr 1fr;
+        }
+       .grid-item:first-child{
+           grid-column: 1 / 3;
+           width: 90%;
+       }
+       .bank{
+           font-size: 10px;
+       }
+       .grid-item:nth-child(2){
+           align-self: flex-end;
+       }
+       .grid-item:last-child{
+           align-self: flex-start;
+       }
    }
 
     @media (max-width: 415px){
+        .korzina-trash{
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
         #check__input{
             margin-right: 5px;
         }
@@ -257,6 +298,22 @@ export default {
         .basket__gray {
             font-size: 14px;
             line-height: 1;
+        }
+        .basket__box{
+            grid-template-columns: 1fr 1fr;
+        }
+        .grid-item:first-child{
+           grid-column: 1 / 3;
+           width: 90%;
+        }
+        .grid-item:nth-child(2){
+           align-self: flex-end;
+       }
+        .bank{
+           font-size: 8px;
+        }
+        .grid-item:last-child{
+            align-self: flex-start;
         }
     }
 

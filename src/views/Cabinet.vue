@@ -118,7 +118,7 @@
                 </div>
                 </div>
             </div>
-            <div class="user__boxes2">
+            <!-- <div class="user__boxes2">
                 <div class="box">
                     <modal-card />
                     <div class="title">Добавить карту</div>
@@ -134,16 +134,7 @@
                         Samarqand
                     </div>
                 </div>
-                <!-- <div class="box">
-                    <div class="title">Удаление личново кабинета</div>
-                    <p>Как только Ваш личный кабинет будет удален</p>
-                    <a href="#">Удаление личново кабинета</a>
-                </div>
-                <div class="box">
-                    <div class="title">Восстановления пароля</div>
-                    <a href="#">Данные для восстановления пароля и sms</a>
-                </div> -->
-            </div>
+            </div> -->
         </div>
         <Footer />
     </div>

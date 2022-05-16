@@ -1,25 +1,55 @@
 <template>
     <div>
-        <modal :height="500" :adaptive="true" name="Modal-Delivery">
+        <modal class="min-height" :height="600" :adaptive="true" name="Modal-Delivery">
             <div class="flex flex-col justify-between h-full">
                 <div class="delivery__box">
                     <div class="flex justify-end delivery__cancel">
-                        <button @click="hide()"><i class="fas fa-times"></i></button>
+                        <!-- <button @click="hide()"><i class="fas fa-times"></i></button> -->
                     </div>
                     <div class="delivery__title">
                         <h5>Способ доставки</h5>
                     </div>
                     <div class="delivery__button">
-                        <button @click="activeBtn = 'btn1'" :class="{active: activeBtn === 'btn1' }" class="mr-3 btn1">Пункт выдачи</button>
-                        <button @click="activeBtn = 'btn2'" :class="{active: activeBtn === 'btn2' }" class="ml-3 btn2">Курьером</button>
+                        <button @click="activeBtn = 'btn1'" :class="{active: activeBtn === 'btn1' }" class="btn1">Пункт выдачи</button>
+                        <button @click="activeBtn = 'btn2'" :class="{active: activeBtn === 'btn2' }" class="btn2">Курьером</button>
                     </div>
                     <div class="delivery__select my-4">
-                        <select class="mr-3" name="" id="">
-                            <option value="">Россия</option>
-                        </select>
-                        <select class="ml-3" name="" id="">
-                            <option value="">Москва</option>
-                        </select>
+                        <div>
+                            <span class="mt-2">Выберите страну</span>
+                            <select class="mt-1" name="" id="">
+                                <option value="">Россия</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="mt-2">Выберите город</span>
+                            <select class="mt-1" name="" id="">
+                                <option value="">Москва</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-4" v-if="activeBtn === 'btn1'">
+                        <label class="flex items-center mb-3 punkt"><input class="mr-4" name="radio" type="radio" />1 Филиал</label>
+                        <label class="flex items-center mb-3 punkt"><input class="mr-4" name="radio" type="radio" />2 Филиал</label>
+                        <label class="flex items-center mb-3 punkt"><input class="mr-4" name="radio" type="radio" />3 Филиал</label>
+                        <label class="flex items-center mb-3 punkt"><input class="mr-4" name="company" type="radio" />© btc - 20 000сум</label>
+                        <label class="flex items-center mb-3 punkt"><input class="mr-4" name="company" type="radio" />© btc - 20 000сум</label>
+                        <label class="flex items-center mb-3 punkt"><input class="mr-4" name="company" type="radio" />© aue - 40 000сум</label>
+                    </div>
+                    <div v-if="activeBtn === 'btn2'">
+                        <div class="inputs">
+                            <div class="input mb-4">
+                                <span>Улица</span>
+                                <input class="adress__input" type="text" placeholder="Улица" />
+                            </div>
+                            <div class="input mb-4">
+                                <span>Дом</span>
+                                <input class="adress__input" type="text" placeholder="Дом" />
+                            </div>
+                            <div class="input mb-4">
+                                <span>Квартира</span>
+                                <input class="adress__input" type="number" placeholder="Квартал" />
+                            </div>
+                        </div>
                     </div>
                     <div class="delivery__address">
                         <p v-if="!info">Нет сохраненных адресов</p>
@@ -27,7 +57,11 @@
                     </div>
                 </div>
                 <div class="delivery__bottom">
-                    <button @click="address()" class="delivery__pick">ВЫБРАТЬ АДРЕС ДОСТАВКИ</button>
+                    <button @click="address()" class="delivery__pick mb-2 w-full">Выбрать на карте</button>
+                    <div class="flex justify-between">
+                        <button class="save" type="submit">Сохранить</button>
+                        <button @click="hide()" class="cancel" type="submit">Отменить</button>
+                    </div>
                 </div>
             </div>
         </modal>
@@ -54,6 +88,16 @@ export default {
 </script>
 
 <style scoped>
+    .inputs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .input{
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+    }
     .delivery__cancel button {
         font-size: 26px;
     }
@@ -67,6 +111,24 @@ export default {
         position: relative;
         padding: 20px 30px;
     }
+    .save{
+        background: #131E3D;
+        border-radius: 8px;
+        font-size: 18px;
+        line-height: 100%;
+        color: #FFFFFF;
+        padding: 15px 25px;
+        width: 48%;
+    }
+    .cancel{
+        background: #EE4927;
+        border-radius: 8px;
+        font-size: 18px;
+        line-height: 100%;
+        color: #FFFFFF;
+        padding: 15px 25px;
+        width: 48%;
+    }
     .delivery__title {
         font-weight: bold;
         font-size: 24px;
@@ -75,8 +137,8 @@ export default {
     }
     .delivery__button {
         display: flex;
+        justify-content: space-between;
         flex-direction: row;
-        padding-right: 40px;
         margin-top: 20px;
     }
     .btn1 {
@@ -86,7 +148,7 @@ export default {
         font-size: 16px;
         line-height: 100%;
         color: #000000;
-        width: 100%;
+        width: 48%;
         height: 50px;
     }
     .btn2 {
@@ -96,7 +158,7 @@ export default {
         font-size: 16px;
         line-height: 100%;
         color: #000000;
-        width: 100%;
+        width: 48%;
         height: 50px;
     }
     .active {
@@ -106,9 +168,16 @@ export default {
         box-sizing: border-box;
         border-radius: 8px;
     }
+    .punkt{
+        display: flex;
+        line-height: 1;
+    }
     .delivery__select{
         display: flex;
-        padding-right: 40px;
+        justify-content: space-between;
+    }
+    .delivery__select > div{
+        width: 48%;
     }
     .delivery__select select{
         background: #D9D9D9;
@@ -138,11 +207,46 @@ export default {
     .delivery__pick {
         background: #131E3D;
         border-radius: 8px;
-        font-weight: 600;
         font-size: 18px;
         line-height: 100%;
         color: #FFFFFF;
         padding: 15px 25px;
+    }
+    input[type=radio]{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    input[type=radio]:before {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        background: #fff;
+        content: "";
+    }
+    input[type=radio]:checked:before{
+        border: 1px solid #EE4927;
+    }
+    input[type=radio]:checked:after {
+        position: relative;
+        display: inline-block;
+        visibility: visible;
+        border-radius: 6px;
+        width: 12px;
+        height: 12px;
+        background: #EE4927;
+        content: "";
+    }
+    .adress__input{
+        border: 1px solid #131E3D;
+        color: #131E3D;
+        outline: #131E3D;
+        font-size: 16px;
+        border-radius: 4px;
+        padding: 4px 6px;
+        margin-top: 6px;
     }
     @media (min-width: 200px) and (max-width: 600px){
         .delivery__box{
@@ -154,27 +258,35 @@ export default {
         .delivery__select{
             padding-right: 0;
         }
+        .delivery__select > div{
+            width: 48%;
+        }
         .delivery__select select{
-            font-size: 15px;
+            font-size: 14px;
             height: 45px;
         }
         .delivery__pick {
             font-size: 14px;
         }
         .delivery__bottom {
-            display: flex;
-            justify-content: center;
+            padding: 10px;
+        }
+        .save{
+            font-size: 14px;
+        }
+        .cancel{
+            font-size: 14px;
         }
         .delivery__title {
             font-size: 20px;
         }
         .btn1 {
-            font-size: 15px;
-            height: 45px;
+            font-size: 14px;
+            height: 35px;
         }
         .btn2 {
-            font-size: 15px;
-            height: 45px;
+            font-size: 14px;
+            height: 35px;
         }
         .delivery__cancel {
             font-size: 22px;

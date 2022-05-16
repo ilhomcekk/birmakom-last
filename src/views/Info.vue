@@ -6,7 +6,6 @@
             <div class="info__boxes">
                 <div class="box">
                     <div class="user">
-                        <!-- <img :src="getUser.photo" alt="not found"> -->
                         <img src="../assets/image/unsplash_OhKElOkQ3RE (1).png" alt="">
                         <div class="user__name">{{ getUser.name || 'Not found' }}</div>
                     </div>
@@ -15,13 +14,6 @@
                         <div class="phone">Телефон: <span>{{ getUser.phone }}</span></div>
                     </div>
                 </div>
-                <!-- <div class="box">
-                    <div class="delivery">
-                        <div class="delivery__title">Мои заказы</div>
-                        <span class="end__order">Завершенные заказы</span>
-                    </div>
-                    <Expected />
-                </div> -->
                 <div class="box">
                     <div class="delivery">
                         <div class="delivery__title">Банковские карты</div>
@@ -32,21 +24,29 @@
                     </div>
                     <modal-card />
                 </div>
+                <div class="box">
+                    <div class="name__title">Rich Daddies</div>
+                    <div class="inputs">
+                        <div class="input">
+                            <label for="">ИНН</label>
+                            <div class="value">274528284</div>
+                        </div>
+                        <div class="input">
+                            <label for="">Расчетный счет</label>
+                            <div class="value">274528284</div>
+                        </div>
+                        <div class="input">
+                            <label for="">ОКЭД</label>
+                            <div class="value">274528284</div>
+                        </div>
+                        <div class="input">
+                            <label for="">Банк</label>
+                            <div class="value">Ипотека банк</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="info__boxes2">
-                <!-- <div class="box">
-                    <div class="box__title">Банковские карты</div>
-                    <a @click="modalCard()">Добавить карту</a>
-                    <modal-card />
-                </div>
-                <div class="box">
-                    <div class="box__title">Покупки</div>
-                    <p>0 товаров</p>
-                </div>
-                <div class="box">
-                    <div class="box__title">Любимые бренды</div>
-                    <p>1 бренд</p>
-                </div> -->
                 <div class="box">
                     <div class="box__title">Уведомления</div>
                     <p class="mt-3"> 0 шт</p>
@@ -148,7 +148,7 @@ export default {
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
         border-radius: 8px;
         width: 32%;
-        margin-right: 2rem;
+        margin-right: 1rem;
         min-height: 235px;
         display: flex;
         flex-direction: column;
@@ -233,6 +233,22 @@ export default {
         align-items: center;
         margin-bottom: 1.5rem;
     }
+    .info__boxes .inputs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .info__boxes .inputs .input{
+        width: 50%;
+        margin: 12px 0;
+    }
+    .info__boxes .inputs .input label{
+        color: #999999;
+        margin-bottom: 8px;
+    }
+    .value{
+        color: #2C2C2C;
+    }
     .end__order{
         color: #999;
     }
@@ -245,7 +261,7 @@ export default {
         margin-right: 1rem;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
     }
-    .info__boxes .box .delivery .delivery__title{
+    .info__boxes .box .delivery .delivery__title, .name__title{
         font-size: 23px;
         color: #023047;
         font-weight: bold;
@@ -319,7 +335,6 @@ export default {
     .info__boxes2 .box .add__adress .svg{
         margin-right: 10px;
     }
-
     @media (min-width: 415px) and (max-width: 1300px){
         .info__boxes2{
             justify-content: space-between;
@@ -407,6 +422,18 @@ export default {
         .info__boxes2 .box .add__adress{
             font-size: 14px;
         }
+        .name__title{
+            margin-bottom: 6px;
+        }
+        .info__boxes .inputs .input{
+            margin: 6px 0;
+        }
+        .info__boxes .inputs .input label{
+            font-size: 14px;
+        }
+        .value{
+            font-size: 14px;
+        }
     }
 
     @media (max-width: 415px) {
@@ -468,6 +495,18 @@ export default {
             height: 16px;
         }
         .info__boxes2 .box .add__adress{
+            font-size: 14px;
+        }
+        .name__title{
+            margin-bottom: 6px;
+        }
+        .info__boxes .inputs .input{
+            margin: 6px 0;
+        }
+        .info__boxes .inputs .input label{
+            font-size: 14px;
+        }
+        .value{
             font-size: 14px;
         }
     }

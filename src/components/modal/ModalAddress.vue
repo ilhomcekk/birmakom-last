@@ -6,20 +6,16 @@
                     <button @click="hide()"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="address__title">
-                    <h5>Выберите адрес доставки</h5>
+                    <h5>Выбрать на карте</h5>
                 </div>
-                <div class="grid grid-cols-10 gap-4">
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d196984.47137915707!2d78.4303487599661!3d39.51714459994583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1646840209206!5m2!1sru!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <!-- <div class="grid grid-cols-10 gap-4">
                     <div class="col-span-10 xl:col-span-4 md:col-span-4">
-                        <div class="address__button">
-                            <button @click="activeBtn = 'btn1'" :class="{active: activeBtn === 'btn1' }" class="btn1">Все</button>
-                            <button @click="activeBtn = 'btn2'" :class="{active: activeBtn === 'btn2' }" class="btn2">Пункты выдачи</button>
-                            <button @click="activeBtn = 'btn3'" :class="{active: activeBtn === 'btn3' }" class="btn3">Почта РФ</button>
-                        </div>
+                        
                     </div>
                     <div class="col-span-10 xl:col-span-6 md:col-span-6">
-                        <img class="w-full" src="../../assets/image/Rectangle 718.png" alt="">
                     </div>
-                </div>
+                </div> -->
             </div>
         </modal>
     </div>
@@ -89,6 +85,33 @@ export default {
     .active {
         border: 1px solid #131E3D;
         color: #131E3D;
+    }
+    input[type=radio]{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    input[type=radio]:before {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        background: #fff;
+        content: "";
+    }
+    input[type=radio]:checked:before{
+        border: 1px solid #EE4927;
+    }
+    input[type=radio]:checked:after {
+        position: relative;
+        display: inline-block;
+        visibility: visible;
+        border-radius: 6px;
+        width: 12px;
+        height: 12px;
+        background: #EE4927;
+        content: "";
     }
     @media (min-width: 200px) and (max-width: 600px){
         .address__button {

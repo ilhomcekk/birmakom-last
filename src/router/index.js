@@ -24,6 +24,7 @@ import GetCode from '../views/GetCode.vue'
 import SellerAdres from '../views/SellerAdres.vue'
 import RatingCart from '../views/RatingCart.vue'
 import Paid from '../views/Paid.vue'
+import Contract from '../views/Contract.vue'
 import store from '../store/index'
 
 Vue.use(VueRouter)
@@ -161,6 +162,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
+  },
+  {
+    path: '/contract',
+    name: 'Contract',
+    component: Contract
   },
   {
     path: '/getcode',

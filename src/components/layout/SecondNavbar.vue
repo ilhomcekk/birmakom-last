@@ -6,6 +6,7 @@
                 <router-link tag="a" class="logo__svg" to="/selected"><i class="far fa-heart"></i><span>Избранные</span></router-link>
                 <router-link tag="a" class="logo__svg" to="/deliverycart"><i class="fas fa-shopping-bag"></i><span>Мои заказы</span></router-link>
                 <router-link tag="a" class="logo__svg" to="/message"><i class="far fa-comment-alt"></i><span>Мои сообщения</span></router-link>
+                <router-link tag="a" class="logo__svg" to="/contract"><i class="far fa-file-lines"></i><span>Мои договоры</span></router-link>
                 <router-link tag="a" class="logo__svg" to="/payments"><i class="fas fa-credit-card"></i><span>Мои платежи</span></router-link>
                 <router-link tag="a" class="logo__svg" to="/cabinet"><i class="far fa-user"></i><span>Мои данные</span></router-link>
             </ul>

@@ -4,7 +4,7 @@
         <second-navbar />
         <location-navbar :name="'Базовая рубашка'" />
         <div class="container mx-auto px-4 xl:px-12 md:px-4">
-            <div class="title">Мои сообшение</div>
+            <div class="title">Мои сообщение</div>
             <div class="my__message">
                 <tabs>
                     <tab title="По товару">
@@ -12,6 +12,9 @@
                     </tab>
                     <tab title="По поставщикам">
                         <Tab2 />
+                    </tab>
+                    <tab title="По договору">
+                        <Tab4 />
                     </tab>
                     <tab title="Поддержка">
                         <Tab3 />
@@ -32,6 +35,7 @@ import { Tabs, Tab } from 'vue-slim-tabs'
 import Tab1 from '../components/tabs/Tab1.vue'
 import Tab2 from '../components/tabs/Tab2.vue'
 import Tab3 from '../components/tabs/Tab3.vue'
+import Tab4 from '../components/tabs/Tab4.vue'
 
 export default {
   name: 'TinyTabs',
@@ -43,6 +47,7 @@ export default {
     Tab1,
     Tab2,
     Tab3,
+    Tab4,
     Navbar,
     Footer,
     SecondNavbar,

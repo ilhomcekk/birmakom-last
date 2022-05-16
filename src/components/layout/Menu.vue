@@ -2,18 +2,18 @@
     <modal :top="0" :width="'100%'" :height="'100%'" name="Modal-Menu" class="search__box">
         <i class="close__icon fas fa-times" @click="closeMenu()"></i>
         <ul>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Телефоны и аксессуары</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Электроника</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Бытовая техника</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Одежда для женщин</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Одежда для мужчин</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="filter">Всё для детей</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="filter">Женская обувь</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="filter">Босоножки, сандалии</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Ботильоны</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Ботфорты</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Кроссовки и кеды</router-link></li>
-            <li><router-link tag="a" @click="closeMenu()" to="/filter">Лоферы</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Телефоны и аксессуары</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Электроника</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Бытовая техника</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Одежда для женщин</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Одежда для мужчин</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="filter">Всё для детей</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="filter">Женская обувь</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="filter">Босоножки, сандалии</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Ботильоны</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Ботфорты</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Кроссовки и кеды</router-link></li>
+            <li @click="closeMenu()"><router-link tag="a" to="/filter">Лоферы</router-link></li>
         </ul>
     </modal>
 </template>
@@ -54,5 +54,8 @@ export default {
     }
     ul li:hover{
         background: #EE4927;
+    }
+    ul li a{
+        display: flex;
     }
 </style>

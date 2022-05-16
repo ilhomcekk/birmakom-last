@@ -13,15 +13,6 @@
                 <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
                     <Cart :cart="cart" />
                 </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
             </div>
             <div class="flex justify-center my-6">
                 <router-link class="show__all" tag="a" to="/filter">Показать еще</router-link>
@@ -39,30 +30,6 @@
         <div class="container mx-auto mt-12 px-4 xl:px-12 md:px-4">
             <div class="news__title">Недавно добавленные товары</div>
             <div class="grid grid-cols-5 gap-3">
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
                 <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
                     <Cart :cart="cart" />
                 </div>
@@ -90,30 +57,6 @@
         <div class="container mx-auto mt-12 px-4 xl:px-12 md:px-4">
             <div class="news__title">Товары со скидкой</div>
             <div class="grid grid-cols-5 gap-3">
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
-                <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
-                    <Cart :cart="cart" />
-                </div>
                 <div v-for="cart in tovar.slice(0, 5)" :key="cart.id">
                     <Cart :cart="cart" />
                 </div>

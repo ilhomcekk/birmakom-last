@@ -16,11 +16,7 @@
                     <Korzina />
                     <Korzina />
                     <div class="basket__delivery mt-8">
-                        <div class="mt-4">
-                            <h5>Способ доставки</h5>
-                            <button class="mt-4" @click="show()">Выбрать адрес доставки</button>
-                        </div>
-                        <div class="mt-4">
+                        <div class="basket-50 mt-4">
                             <h5>Способ получения товара</h5>
                             <div class="inputs mt-4">
                                 <div>
@@ -29,12 +25,17 @@
                                 </div>
                                 <div>
                                     <input id="samo2" class="mr-2" type="radio" name="delivery" />
-                                    <label for="samo2">Доставка</label>
+                                    <label for="samo2">Адресная доставка</label>
                                 </div>
                             </div>
                         </div>
-                        <Modal-Delivery />
-                        <Modal-Address />
+                        <div class="basket-50 mt-4">
+                            <h5>Адрес доставки</h5>
+                            <div class="choosed__adress mt-4">Uzbekistan, Samarkand, Ul, Al bukhariy 6</div>
+                            <!-- <button class="choose__adress mt-4" @click="show()">Выбрать адрес доставки</button> -->
+                        </div>
+                        <!-- <Modal-Delivery />
+                        <Modal-Address /> -->
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <Payment />
@@ -57,8 +58,8 @@ import Korzina from '../components/Korzina.vue'
 import Total from '../components/Total.vue'
 import Payment from '../components/Payment.vue'
 import Login from '../components/Login.vue'
-import ModalDelivery from '../components/modal/ModalDelivery.vue'
-import ModalAddress from '../components/modal/ModalAddress.vue'
+// import ModalDelivery from '../components/modal/ModalDelivery.vue'
+// import ModalAddress from '../components/modal/ModalAddress.vue'
 import MainMenu from '../components/layout/MainMenu.vue'
 
 export default {
@@ -66,12 +67,12 @@ export default {
     this.show()
   },
   methods: {
-    show () {
-      this.$modal.show('Modal-Delivery')
-    },
-    address () {
-      this.$modal.show('Modal-Address')
-    }
+    // show () {
+    //   this.$modal.show('Modal-Delivery')
+    // },
+    // address () {
+    //   this.$modal.show('Modal-Address')
+    // }
   },
   components: {
     Navbar,
@@ -80,8 +81,8 @@ export default {
     Total,
     Payment,
     Login,
-    ModalDelivery,
-    ModalAddress,
+    // ModalDelivery,
+    // ModalAddress,
     MainMenu
   }
 }
@@ -185,6 +186,9 @@ export default {
         line-height: 100%;
         color: #131E3D;
     }
+    .basket-50{
+        width: 50%;
+    }
     .basket__spec {
         background: #FFFFFF;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
@@ -199,6 +203,22 @@ export default {
     }
     .basket__gray {
         font-size: 14px;
+    }
+    .choosed__adress{
+        line-height: 1;
+    }
+    .choose__adress{
+        border: 1px solid #EE4927;
+        color: #EE4927 !important;
+        font-size: 16px !important;
+        padding: 8px 12px;
+        border-radius: 3px;
+        transition: 0.2s linear;
+        cursor: pointer;
+    }
+    .choose__adress:hover{
+        background: #EE4927 !important;
+        color: #fff !important;
     }
 
     @media (min-width: 769px) and (max-width: 1025px){
@@ -246,6 +266,15 @@ export default {
         }
         .basket__delivery h5{
             font-size: 16px;
+        }
+        .choose__adress{
+            font-size: 14px !important;
+        }
+        .basket-50{
+            width: 100%;
+        }
+        .choosed__adress{
+            font-size: 14px;
         }
         .inputs span, label{
             font-size: 14px;

@@ -1,8 +1,8 @@
 <template>
     <div class="cart__box shadow-xl">
         <div class="cart__image" @mouseover="listOne = true" @mouseleave="listOne = false">
-            <img :src="cart.photo" alt="not found">
-            <!-- <router-link tag="span" @click.native="$router.go()" :key="cart.id" :to="{ name: 'Add', params: { id: cart.id }, }" v-if="listOne" @click="listOne = false" class="fast__review">Быстрый просмотр</router-link> -->
+            <img :src="path + cart.photo" alt="not found">
+            <router-link tag="span" @click.native="$router.go()" :key="cart.id" :to="{ name: 'Add', params: { id: cart.id }, }" v-if="listOne" @click="listOne = false" class="fast__review">просмотр</router-link>
             <span class="skidka">21 %</span>
             <icon-love v-if="!favorite" v-on:click.native="saveCart" :love="love" />
             <icon-trash v-else v-on:click.native="deleteCart(cart.id)" />
@@ -34,7 +34,8 @@ export default {
   props: ['cart', 'favorite'],
   data: () => ({
     listOne: false,
-    love: false
+    love: false,
+    path: 'http://novamarket.qwertyuz.ru'
   }),
   methods: {
     saveCart () {
@@ -167,21 +168,22 @@ export default {
     .fast__review {
         position: absolute;
         top: 0;
-        margin-top: 0px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
         font-weight: normal;
         font-size: 12px !important;
         line-height: 22px;
         color: #023047;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         cursor: pointer;
         background: #F8F8FA;
         border-radius: 25px;
-        width: max-content;
         padding: 5px 10px;
         text-align: center;
         white-space: nowrap;
+        opacity: 0;
     }
     .skidka {
         position: absolute;
@@ -215,14 +217,14 @@ export default {
         }
         .cart__add button {
             font-size: 12px;
-            padding: 4px;
+            padding: 8px 4px;
             margin-bottom: 5px;
             border-radius: 3px;
             width: 100%;
         }
         .cart__add .buy{
             width: 100%;
-            padding: 4px;
+            padding: 8px 4px;
             border-radius: 3px;
             font-size: 12px;
         }

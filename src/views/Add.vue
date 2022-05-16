@@ -6,13 +6,14 @@
             <location-navbar :cart="cart" />
             <div class="container mx-auto px-4 xl:px-12 md:px-4">
                 <div class="cart-justify">
-                    <h1>{{ cart.name }} <i class="far fa-heart" style="font-size: 24px"></i></h1>
-                    <router-link to="/message" class="write__to-market">
+                    <h1>{{ cart.name }}</h1>
+                    <i class="far fa-heart" style="font-size: 32px"></i>
+                    <!-- <router-link to="/message" class="write__to-market">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.7814 12C10.7814 12.3232 10.9098 12.6332 11.1384 12.8618C11.3669 13.0903 11.6769 13.2188 12.0001 13.2188C12.3234 13.2188 12.6334 13.0903 12.8619 12.8618C13.0905 12.6332 13.2189 12.3232 13.2189 12C13.2189 11.6768 13.0905 11.3668 12.8619 11.1382C12.6334 10.9097 12.3234 10.7812 12.0001 10.7812C11.6769 10.7812 11.3669 10.9097 11.1384 11.1382C10.9098 11.3668 10.7814 11.6768 10.7814 12ZM15.8595 12C15.8595 12.3232 15.9879 12.6332 16.2165 12.8618C16.445 13.0903 16.755 13.2188 17.0783 13.2188C17.4015 13.2188 17.7115 13.0903 17.9401 12.8618C18.1686 12.6332 18.297 12.3232 18.297 12C18.297 11.6768 18.1686 11.3668 17.9401 11.1382C17.7115 10.9097 17.4015 10.7812 17.0783 10.7812C16.755 10.7812 16.445 10.9097 16.2165 11.1382C15.9879 11.3668 15.8595 11.6768 15.8595 12ZM5.70327 12C5.70327 12.3232 5.83167 12.6332 6.06023 12.8618C6.28879 13.0903 6.59879 13.2188 6.92202 13.2188C7.24525 13.2188 7.55525 13.0903 7.78381 12.8618C8.01237 12.6332 8.14077 12.3232 8.14077 12C8.14077 11.6768 8.01237 11.3668 7.78381 11.1382C7.55525 10.9097 7.24525 10.7812 6.92202 10.7812C6.59879 10.7812 6.28879 10.9097 6.06023 11.1382C5.83167 11.3668 5.70327 11.6768 5.70327 12ZM22.4916 7.59219C21.9177 6.22871 21.0951 5.00488 20.0464 3.95371C19.0051 2.90862 17.769 2.07791 16.408 1.50859C15.0115 0.92207 13.5287 0.625 12.0001 0.625H11.9494C10.4107 0.632617 8.92026 0.937305 7.5187 1.53652C6.16933 2.11168 4.94476 2.94387 3.91323 3.98672C2.87475 5.03535 2.05971 6.2541 1.49604 7.6125C0.912058 9.01914 0.617527 10.5146 0.625144 12.0533C0.63376 13.8166 1.05092 15.5539 1.84389 17.1289V20.9883C1.84389 21.298 1.96695 21.5951 2.18598 21.8142C2.40502 22.0332 2.7021 22.1562 3.01186 22.1562H6.87378C8.44874 22.9492 10.1861 23.3664 11.9494 23.375H12.0027C13.5236 23.375 14.9988 23.0805 16.3876 22.5041C17.7418 21.9416 18.9733 21.1205 20.0134 20.0869C21.0621 19.0484 21.8873 17.8348 22.4636 16.4814C23.0628 15.0799 23.3675 13.5895 23.3751 12.0508C23.3828 10.5045 23.0832 9.00391 22.4916 7.59219ZM18.655 18.7133C16.8751 20.4754 14.5138 21.4453 12.0001 21.4453H11.957C10.4259 21.4377 8.90503 21.0568 7.56186 20.3408L7.34858 20.2266H3.77358V16.6516L3.65932 16.4383C2.94331 15.0951 2.56245 13.5742 2.55483 12.0432C2.54468 9.51172 3.51206 7.13516 5.28686 5.34512C7.05913 3.55508 9.42807 2.56484 11.9595 2.55469H12.0027C13.2722 2.55469 14.5037 2.80098 15.664 3.28848C16.7964 3.76328 17.8121 4.44629 18.6855 5.31973C19.5564 6.19062 20.2419 7.20879 20.7167 8.34121C21.2093 9.51426 21.4556 10.7584 21.4505 12.0432C21.4353 14.5721 20.4425 16.941 18.655 18.7133Z" fill="#EE4927"/>
                         </svg>
                         Написать в магазин
-                    </router-link>
+                    </router-link> -->
                 </div>
                 <div class="product-action" style="background: #F8F8FA; padding-left: 30px;">
                     <div class="stars">
@@ -25,13 +26,13 @@
                 <div class="product-list">
                     <div class="product__img relative mr-8">
                         <div class="images">
-                            <img @load="onImgLoad" @click="updataMain(cart.photo)" :src="cart.photo" alt="">
-                            <img v-show="cart.gallery[0]" @load="onImgLoad" @click="updataMain(cart.gallery[0])" :src="cart.gallery[0]" alt="">
-                            <img v-show="cart.gallery[1]" @load="onImgLoad" @click="updataMain(cart.gallery[1])" :src="cart.gallery[1]" alt="">
-                            <img v-show="cart.gallery[2]" @load="onImgLoad" @click="updataMain(cart.gallery[2])" :src="cart.gallery[2]" alt="">
+                            <img @load="onImgLoad" @click="updataMain(cart.photo)" :src="path + cart.photo" alt="">
+                            <img v-show="cart.gallery[0]" @load="onImgLoad" @click="updataMain(cart.gallery[0])" :src="path + cart.gallery[0]" alt="">
+                            <img v-show="cart.gallery[1]" @load="onImgLoad" @click="updataMain(cart.gallery[1])" :src="path + cart.gallery[1]" alt="">
+                            <img v-show="cart.gallery[2]" @load="onImgLoad" @click="updataMain(cart.gallery[2])" :src="path + cart.gallery[2]" alt="">
                         </div>
                         <div class="image">
-                            <img :src="static.photo" alt="">
+                            <img :src="path + static.photo" alt="">
                         </div>
                         <slide-mobile :cart="cart" class="mobile__slide" />
                         <div v-if="imageLoader" class="loader__blur">
@@ -51,7 +52,7 @@
                         <div class="color__title" v-if="cart.filters.length > 1">Цвет</div>
                         <div class="color__boxes">
                             <div class="color__box" v-for="col in cart.colors" :key="col.id">
-                                <img class="cursor-pointer" @click="updateImage(col.img, col.second, col.third, col.fourth)" :src="col.img" alt="photo">
+                                <img class="cursor-pointer" @click="updateImage(col.img, col.second, col.third, col.fourth)" :src="path + col.img" alt="photo">
                             </div>
                         </div>
                         <div class="product__size-title" v-if="cart.filters.length > 1">Размер</div>
@@ -69,13 +70,15 @@
                         <div class="brend">
                             <a href="#"><img :src="cart.brand.photo" alt="not found"></a>
                         </div> -->
-                        <p class="flex items-center mb-2" @click="show()">
+                        <p class="flex items-center cursor-pointer mb-2" @click="show()">
                             В Uzbekistan через BTC 
                             <svg class="ml-2" width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 1L8.5 8.5L1 0.999999" stroke="#131E3D" stroke-width="2"/>
                             </svg>
                         </p>
-                        <partner-name />
+                        <Modal-Delivery />
+                        <Modal-Address />
+                        <!-- <partner-name /> -->
                         <p class="mb-2">Расчётное время доставки: 29-48 дней</p>
                         <div class="product__buttons">
                             <a id="buy" to="">Купить</a>
@@ -245,13 +248,6 @@
                 <span>Оценке</span>
                 <div class="customer pt-4">
                     <Comments />
-                    <div class="c__box">
-                        <div class="box__title">Оставьте ваш отзыв</div>
-                        <input type="text" placeholder="Ваше имя" />
-                        <input type="email" placeholder="Ваш  e-mail" />
-                        <textarea placeholder="Ваш отзыв"></textarea>
-                        <button type="submit">Отправить отзыв</button>
-                    </div>
                 </div>
             </div>
             <div class="container mx-auto px-4 xl:px-12 md:px-4 mb-12">
@@ -282,7 +278,9 @@ import Loader from '../components/Loader.vue'
 import SlideMobile from '../components/slide/SlideMobile.vue'
 import Comments from '../components/Comments.vue'
 import MainMenu from '../components/layout/MainMenu.vue'
-import PartnerName from '../components/modal/PartnerName.vue'
+import ModalDelivery from '../components/modal/ModalDelivery.vue'
+import ModalAddress from '../components/modal/ModalAddress.vue'
+// import PartnerName from '../components/modal/PartnerName.vue'
 import { Tabs, Tab } from 'vue-slim-tabs'
 
 export default {
@@ -294,7 +292,8 @@ export default {
     picked: '',
     quantity: 1,
     static: {},
-    imageLoader: true
+    imageLoader: true,
+    path: 'http://novamarket.qwertyuz.ru'
   }),
   async mounted () {
     const id = this.$route.params.id
@@ -328,9 +327,15 @@ export default {
     onImgLoad () {
       this.imageLoader = false
     },
+    // show () {
+    //   this.$modal.show('Partner-Name')
+    // },
     show () {
-      this.$modal.show('Partner-Name')
+      this.$modal.show('Modal-Delivery')
     },
+    address () {
+      this.$modal.show('Modal-Address')
+    }
   },
   computed: {
 
@@ -348,9 +353,11 @@ export default {
     SlideMobile,
     Comments,
     MainMenu,
+    ModalDelivery,
+    ModalAddress,
     Tabs,
     Tab,
-    PartnerName,
+    // PartnerName,
   }
 }
 
@@ -430,7 +437,6 @@ export default {
     }
     .cart-justify{
         display: flex;
-        align-items: center;
         justify-content: space-between;
         padding: 30px 30px 16px 30px;
         background: #F8F8FA;
@@ -621,45 +627,8 @@ export default {
         color: #000;
         background: #f6f6f6;
     }
-    .c__box:last-child{
-        background: #131E3D;
-        border-radius: 10px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        height: 450px;
-        padding: 1rem 2rem;
-        width: 30%;
-        margin-left: 4rem;
-    }
     .customer .c__box:first-child .c__box-title{
         line-height: 1;
-    }
-    .c__box:last-child .box__title{
-        color: #D9D9D9;
-        font-size: 26px;
-        font-weight: bold;
-    }
-    .c__box:last-child input{
-        padding: 10px;
-        border-radius: 8px;
-        outline: none;
-    }
-    .c__box:last-child textarea{
-        padding: 10px 10px 3rem 10px;
-        outline: none;
-        border-radius: 8px;
-    }
-    .c__box:last-child textarea{
-        resize: none;
-    }
-    .c__box:last-child button{
-        background: #fff;
-        border-radius: 8px;
-        color: #313131;
-        padding: 10px 30px;
-        margin: 0 auto;
     }
     .radioContainer {
         display: inline-block;
@@ -843,10 +812,6 @@ export default {
         .customer .user__comment .user .user__name{
             width: 45%;
         }
-        .c__box:last-child{
-            width: 38%;
-            margin-left: 0;
-        }
         .radioContainer .circle {
             width: auto;
             height: 35px;
@@ -944,12 +909,6 @@ export default {
         .customer .c__box:first-child{
             width: 100%;
         }
-        .c__box:last-child{
-            width: 60%;
-            margin-left: 0;
-            margin: auto;
-            margin-bottom: 2rem;
-        }
         .product-list .product__img .image .far.fa-heart{
             bottom: 15px !important;
             top: unset !important;
@@ -1035,6 +994,7 @@ export default {
         .add-product .container:nth-child(2) h1{
             font-size: 20px;
             margin-bottom: 10px;
+            max-width: 90%;
         }
         .add-product .product__information .brend a{
             width: 30%;
@@ -1078,12 +1038,6 @@ export default {
         }
         .customer .c__box:first-child{
             width: 100%;
-        }
-        .c__box:last-child{
-            width: 80%;
-            margin-left: 0;
-            margin: auto;
-            margin-bottom: 2rem;
         }
         .mobile__slide {
             display: block;
@@ -1244,13 +1198,6 @@ export default {
         .customer .user__comment p {
             font-size: 18px !important;
         }
-
-        .c__box:last-child{
-            width: 100%;
-            margin-left: 0;
-            margin: auto;
-            margin-bottom: 2rem;
-        }
         .mobile__slide {
             display: block;
         }
@@ -1284,9 +1231,11 @@ export default {
             justify-content: space-between;
         }
         .cart-justify{
-            flex-direction: column;
             align-items: unset;
             padding: 10px;
+        }
+        .cart-justify i{
+            font-size: 18px !important;
         }
         .add-product .product-list{
             padding: 10px;
@@ -1333,21 +1282,6 @@ export default {
         }
         .comment__btn{
             padding: 6px 10px !important;
-        }
-        .c__box:last-child .box__title{
-            font-size: 20px !important;
-        }
-        .c__box:last-child{
-            height: 370px !important;
-        }
-        .c__box:last-child input{
-            font-size: 14px !important;
-        }
-        .c__box:last-child textarea{
-            font-size: 14px !important;
-        }
-        .c__box:last-child button{
-            font-size: 14px !important;
         }
     }
 
@@ -1417,8 +1351,9 @@ export default {
             margin: 0.5rem 0;
         }
         .add-product .container:nth-child(2) h1{
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 10px;
+            max-width: 90%;
         }
         .q__comments{
             width: 100%;
@@ -1469,9 +1404,6 @@ export default {
         }
         .customer .user__comment .user .user__name{
             width: 74%;
-        }
-        .c__box:last-child {
-            padding: 1rem;
         }
         .radioContainer .circle {
             width: auto;

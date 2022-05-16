@@ -17,7 +17,7 @@
             <p>Количество: <span>1 шт</span></p>
             <div class="delivered">Доставлен</div>
             <div class="payment">
-                <p>Способ оплаты</p>
+                <p>Выбор оплаты</p>
                 <a href="#"><img src="../assets/image/image 29.png" alt="not found"></a>
             </div>
         </div>

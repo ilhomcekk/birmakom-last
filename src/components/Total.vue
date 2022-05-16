@@ -9,16 +9,17 @@
             <p class="total__right">1890 ₽</p>
         </div>
         <div class="flex mt-2">
-            <h5 class="total__delivery">Доставка: </h5>
-            <button class="total__pick">Выбрать адресс доставки</button>
+            <h5 class="total__delivery">Стоимость доставки:</h5>
+            <button class="total__pick">2000 ₽</button>
         </div>
         <div class="my-5">
             <button class="total__button">Заказать</button>
         </div>
         <div class="total__agree">
-            <div class="basket__spec">
-                <a href="#" @click="address()">Правил пользования торговой площадкой и правилами возврата</a>
-            </div>
+            <label class="basket__spec flex items-center">
+                <input class="mr-2" type="checkbox" />
+                <span href="#" @click="address()">Правил пользования торговой площадкой и правилами возврата</span>
+            </label>
         </div>
     </div>
 </template>
@@ -69,7 +70,7 @@ export default {
     }
     .total__pick {
         font-weight: normal;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 100%;
         text-align: right;
         color: #131E3D;
@@ -96,6 +97,15 @@ export default {
         font-size: 13px;
         line-height: 100%;
         color: #898989;
+    }
+    .basket__spec span{
+        color: #131E3D;
+        line-height: 1;
+        cursor: pointer;
+    }
+    input[type=checkbox]{
+        min-width: 22px;
+        min-height: 22px;
     }
 
     @media (min-width: 600px) and (max-width: 769px){
@@ -125,6 +135,13 @@ export default {
         .total__button{
             font-size: 14px;
         }
+        .basket__spec span{
+            font-size: 14px;
+        }
+        input[type=checkbox]{
+            min-width: 18px;
+            min-height: 18px;
+        }
     }
 
     @media (max-width: 376px){
@@ -147,6 +164,13 @@ export default {
         }
         .total__button{
             font-size: 14px;
+        }
+        .basket__spec span{
+            font-size: 14px;
+        }
+        input[type=checkbox]{
+            min-width: 18px;
+            min-height: 18px;
         }
     }
 

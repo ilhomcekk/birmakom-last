@@ -4,7 +4,7 @@
         <second-navbar />
         <location-navbar :name="'Базовая рубашка'" />
         <div class="container mx-auto px-4 xl:px-12 md:px-4 delivery-carts">
-            <div class="delivery-cart__title">Мои заказы</div>
+            <div class="delivery-cart__title">Мои заказы <span>Завершенные заказы</span></div>
             <ul class="cart__list py-4 mt-4">
                 <li>
                     <a to="" >
@@ -105,19 +105,12 @@ import LocationNavbar from '../components/layout/LocationNavbar.vue'
 // import SendOrder from '../components/modal/SendOrder.vue'
 // import ReviewPending from '../components/modal/ReviewPending.vue'
 // import Returns from '../components/modal/Returns.vue'
-import $ from "jquery";
 
 export default {
   name: 'Home',
   data: () => ({
     active: false
   }),
-  mounted: function() {
-    $(".cart__list li").click(function () {
-        $(".cart__list li").removeClass("active");
-        $(this).addClass("active");
-    });
-    },
   methods: {
     //  paymentExpected () {
     //     this.$modal.show('Payment-Expected')
@@ -175,9 +168,16 @@ export default {
         background: #131E3D;
     }
     .delivery-cart__title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-size: 42px;
         color: #131E3D;
         line-height: 1;
+    }
+    .delivery-cart__title span{
+        color: #EE4927;
+        font-size: 18px;
     }
     .delivery-carts h1{
         color: #313131;
@@ -389,6 +389,9 @@ export default {
         }
         .delivery-cart__title{
             font-size: 22px;
+        }
+        .delivery-cart__title span{
+            font-size: 14px;
         }
     }
 

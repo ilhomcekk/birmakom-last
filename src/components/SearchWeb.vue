@@ -1,16 +1,16 @@
 <template>
     <div class="search__category">
-        <a href="#" class="search__text">Аккумлятор</a>
-        <a href="#" class="search__text">Аккумлятор</a>
-        <a href="#" class="search__text">Аккумлятор</a>
-        <a href="#" class="search__text">Аккумлятор <span>От 11 999 Р</span></a>
-        <a href="#" class="search__text">Аккумлятор <span>От 11 999 Р</span></a>
-        <a href="#" class="search__text">Аккумлятор <span>От 11 999 Р</span></a>
-        <a href="#" class="search__text"><img src="../assets/image/Mask Group.png" alt=""> Аккумлятор <span>От 11 999 Р</span></a>
-        <a href="#" class="search__text"><img src="../assets/image/image 26.png" alt=""> Аккумлятор <span>От 11 999 Р</span></a>
-        <a href="#" class="search__text"><img src="../assets/image/gh-best-tv-brands-1587581394 1.png" alt=""> Аккумлятор <span>От 11 999 Р</span></a>
-        <a href="#" class="search__text"><img src="../assets/image/blazer-mid-77-vintage-mens-shoes-nw30B2.jpg" alt=""> Аккумлятор <span>От 11 999 Р</span></a>
-        <a href="#" class="search__text"><img src="../assets/image/Mask Group.png" alt=""> Аккумлятор <span>От 11 999 Р</span></a>
+        <router-link to="/filter" class="search__text">Аккумлятор</router-link>
+        <router-link to="/filter" class="search__text">Аккумлятор</router-link>
+        <router-link to="/filter" class="search__text">Аккумлятор</router-link>
+        <router-link to="/filter" class="search__text">Аккумлятор <span>От 11 999 Р</span></router-link>
+        <router-link to="/filter" class="search__text">Аккумлятор <span>От 11 999 Р</span></router-link>
+        <router-link to="/filter" class="search__text">Аккумлятор <span>От 11 999 Р</span></router-link>
+        <router-link to="/filter" class="search__text"><img src="../assets/image/Mask Group.png" alt=""> Аккумлятор <span>От 11 999 Р</span></router-link>
+        <router-link to="/filter" class="search__text"><img src="../assets/image/image 26.png" alt=""> Аккумлятор <span>От 11 999 Р</span></router-link>
+        <router-link to="/filter" class="search__text"><img src="../assets/image/gh-best-tv-brands-1587581394 1.png" alt=""> Аккумлятор <span>От 11 999 Р</span></router-link>
+        <router-link to="/filter" class="search__text"><img src="../assets/image/blazer-mid-77-vintage-mens-shoes-nw30B2.jpg" alt=""> Аккумлятор <span>От 11 999 Р</span></router-link>
+        <router-link to="/filter" class="search__text"><img src="../assets/image/Mask Group.png" alt=""> Аккумлятор <span>От 11 999 Р</span></router-link>
     </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
         position: absolute;
         width: 100%;
         left: 0;
+        top: 100%;
         background: #fff;
         border-radius: 8px;
         padding: 10px 5px 10px 10px;
